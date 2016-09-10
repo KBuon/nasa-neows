@@ -1,0 +1,26 @@
+{
+  "name": "nasa-neows",
+  "version": "1.0.0",
+  "description": "Node.js wrapper for NASA's Near Earth Object Web Service (NeoWS)",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KBuon/nasa-neows.git"
+  },
+  "keywords": [
+    "NASA",
+    "asteroid"
+  ],
+  "author": "Kuntharith Buon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KBuon/nasa-neows/issues"
+  },
+  "homepage": "https://github.com/KBuon/nasa-neows#readme",
+  "dependencies": {
+    "request": "^2.74.0"
+  }
+}
