@@ -27,7 +27,6 @@ client.getFeed(options, callback);
 
 Argument(s):
 * ```options```: options is an object type containing start_date(optional), end_date(required), detailed(required).
-Example of options:
 ```
 var options = {
   'start_date': '2016-09-13', //If not using start_date, set to null
@@ -56,7 +55,6 @@ client.browse(options, callback);
 
 Argument(s):
 * ```options```: options is an object type containing the page number (string) and size (string) of page.
-Example of options:
 ```
 var options = {
   'page': '0',
