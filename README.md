@@ -25,7 +25,7 @@ the ```data``` argument will contain the JSON that is returned by the API.
 client.getFeed(options, callback);
 ```
 
-<b>Argument(s):</b>
+Argument(s):
 * ```options```: options is an object type containing start_date(optional), end_date(required), detailed(required).
 Example of options:
 ```
@@ -41,7 +41,7 @@ var options = {
 client.getFeedToday(isDetailed, callback);
 ```
 
-<b>Argument(s):</b>
+Argument(s):
 * ```isDetailed```: boolean variable used to determine whether the JSON returned is filled with basic/detailed information
 
 <b>Retrives current Near Earth Object statistics</b>
@@ -54,7 +54,7 @@ client.getStats(callback);
 client.browse(options, callback);
 ```
 
-<b>Argument(s):</b>
+Argument(s):
 * ```options```: options is an object type containing the page number (string) and size (string) of page.
 Example of options:
 ```
@@ -69,7 +69,7 @@ var options = {
 client.getAsteroid(asteroid_id, callback);
 ```
 
-<b>Argument(s):</b>
+Argument(s):
 * ```asteroid_id```:[string] ID of asteroid
 
 ## Rate Limits
