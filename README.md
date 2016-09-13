@@ -6,32 +6,19 @@ Node.js wrapper for NASA's Near Earth Object Web Service (NeoWS)
 npm install nasa-neows
 ```
 
-## Public Methods
-```
-  getFeed(startDate, endDate, callback); //startDate is optional
-  getFeedToday(params, callback); //params is optional
-  getStats(callback);
-  browse(params, callback); // params is optional
-  getAsteroid(asteroid_id, callback);
-```
-
 ## Usage
-
-<b>with default configurations</b>
-
+<b>Initialization</b>
 ```
-var client = require('nasa-neows');
-
-client.getFeed(null, "2016-04-10", function (error, data) {
-    if (error){
-      console.log( error);
-    } else {
-      console.log(data);
-    }
-});
-
+var nasa = require('nasa-neows');
+var client = new nasa("api_key_goes_here"); 
+// If you dont have an api_key you can use the demo key which is ```DEMO_KEY``
+// please see the "Rate Limits" for more info.
 ```
 
+<b>Callback:</br></b>
+The callback function requires two arguments, ```error``` and ```data```. If
+the request fails, the ```error``` will be an ```Error``` object. Otherwise,
+the ```data``` argument will contain the JSON that is returned by the API.
 
 
 ## Rate Limits
