@@ -1,6 +1,10 @@
 # nasa-neows
 Node.js wrapper for NASA's Near Earth Object Web Service (NeoWS)
 
+## Status
+[![Build
+Status](https://travis-ci.org/KBuon/nasa-neows.svg?branch=master)](https://travis-ci.org/KBuon/nasa-neows)
+
 ## Installation
 ```
 npm install nasa-neows
