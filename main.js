@@ -14,6 +14,8 @@ var invalidOptionsType = new TypeError("'options' must be of type object");
 var invalidDetailedType = new TypeError("'isDetailed' must be of type boolean");
 var invalidAsteroidType = new TypeError("'asteroid_id' must be of type string");
 
+var invalidCallbackArgs = new Error("invalid callback args");
+
 // Endpoints 
 var baseURL = "https://api.nasa.gov/neo/rest/v1/";
 var endpoints = {
@@ -42,6 +44,17 @@ var client  = function(api_key) {
 		'isDetailed' : true | false
 	};
 */
+
+// Private Functions
+var getOptionSize = function(options){
+	var optionSize = 0, key;
+	for (key in options){
+		if (options.hasOwnProperty(key)) optionSize++;
+	}
+	return optionSize;
+};
+
+// Public Functions
 client.prototype.getFeed = function(options, callback){
 	// Error checking
 	if (options == undefined){
@@ -50,6 +63,9 @@ client.prototype.getFeed = function(options, callback){
 	} else if (typeof options !== 'object'){
 		throw invalidOptionsType;
 		return;
+	} else if (getOptionSize(options) != 3){
+		throw new Error("invalid options");
+		return;
 	}
 
 	if (callback == undefined){
@@ -57,6 +73,9 @@ client.prototype.getFeed = function(options, callback){
 		return;
 	} else if (typeof callback !== 'function'){
 		throw invalidCallbackType;
+		return;
+	} else if (callback.length != 2){
+		throw invalidCallbackArgs;
 		return;
 	}
 
@@ -91,6 +110,9 @@ client.prototype.getFeedToday  = function(isDetailed, callback){
 	} else if (typeof callback !== 'function'){
 		throw invalidCallbackType;
 		return;
+	} else if (callback.length != 2){
+		throw invalidCallbackArgs;
+		return;
 	}
 
 	var params = {
@@ -112,6 +134,9 @@ client.prototype.getStats = function(callback){
 	} else if (typeof callback !== 'function'){
 		throw invalidCallbackType;
 		return;
+	} else if (callback.length != 2){
+		throw invalidCallbackArgs;
+		return;
 	}
 
 	var params = { 
@@ -132,6 +157,9 @@ client.prototype.browse = function(options, callback){
 	} else if (typeof options !== 'object'){
 		throw invalidOptionsType;
 		return;
+	} else if (getOptionSize(options) != 2){
+		throw new Error("invalid options");
+		return;
 	}
 
 	if (callback == undefined){
@@ -139,6 +167,9 @@ client.prototype.browse = function(options, callback){
 		return;
 	} else if (typeof callback !== 'function'){
 		throw invalidCallbackType;
+		return;
+	} else if (callback.length != 2){
+		throw invalidCallbackArgs;
 		return;
 	}
 
@@ -170,6 +201,9 @@ client.prototype.getAsteroid = function(asteroid_id, callback){
 		return;
 	} else if (typeof callback !== 'function'){
 		throw invalidCallbackType;
+		return;
+	} else if (callback.length != 2){
+		throw invalidCallbackArgs;
 		return;
 	}
 
